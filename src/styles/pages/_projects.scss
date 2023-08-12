@@ -1,0 +1,47 @@
+%projects {
+    @apply w-full h-full flex flex-col justify-center items-center;
+
+    .cards {
+        @apply w-[90%] h-[25rem] flex justify-center;
+
+        .card {
+            @apply w-[3rem] h-[25rem] rounded-md zbg-theme zfg-theme;
+
+            .img {
+                @apply w-full h-[40%];
+                img {
+                    @apply w-full h-full object-cover;
+                    border-radius: 0.375rem;
+                    border-bottom-left-radius: 1.5rem;
+                    border-bottom-right-radius: 1.5rem;
+                }
+            }
+            .content {
+                @apply w-full h-[60%] px-5 py-2;
+
+                div {
+                    @apply w-full;
+                }
+                .title {
+                    @apply h-[20%] text-[1.7rem];
+                }
+                .desc {
+                    @apply h-[50%] text-[1.2rem];
+                }
+                .button {
+                    @apply h-[30%] flex justify-end items-center px-5;
+                    button {
+                        @apply w-20 h-10 rounded-md bg-light-green dark:bg-dark-green zfg-theme;
+                    }
+                }
+            }
+        }
+    }
+    .div-footer {
+        @apply w-full h-[5rem] flex justify-center items-center ;
+
+        .center {
+            @apply flex
+        }
+    }
+}

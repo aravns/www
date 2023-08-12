@@ -1,0 +1,26 @@
+%about {
+    @apply w-full h-full flex flex-col-reverse lg:flex-row-reverse justify-center items-center gap-11 p-10;
+
+    .two-div {
+        @apply w-full h-full flex justify-center items-center;
+    }
+
+    .content {
+        @apply flex flex-row justify-center items-center gap-5 w-[90%] h-[9rem];
+        p {
+            @apply text-[1rem] sm:text-[1.5rem];
+        }
+    }
+
+    .img {
+        @apply w-[63%] h-[50%] sm:h-[100%] object-cover;
+
+        .lala {
+            @apply text-dark-green flex justify-center items-center relative;
+
+            .screen {
+                @apply top-[11%] w-[75%] h-[60%] absolute text-[1rem];
+            }
+        }
+    }
+}
