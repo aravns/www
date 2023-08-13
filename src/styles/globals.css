@@ -346,7 +346,7 @@ html {
   @apply w-full h-full flex justify-center items-center;
 }
 .about .content {
-  @apply flex flex-row justify-center items-center gap-5 w-[90%] h-[9rem];
+  @apply flex flex-row justify-start items-center gap-5 w-[90%] h-[9rem];
 }
 .about .content p {
   @apply text-[1rem] sm:text-[1.5rem];

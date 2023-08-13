@@ -1,6 +1,7 @@
 "use client";
+
 import Image from "next/image";
-import { ReactNode, RefObject, useRef } from "react";
+import { useRef } from "react";
 import { Title } from "../components/titile";
 
 interface Pops {

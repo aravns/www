@@ -1,4 +1,4 @@
-import { LegacyRef, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 interface Pops {

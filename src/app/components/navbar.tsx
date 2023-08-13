@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { language, chageLanguage } from "../settings";
 
 interface Pops {
     getTheme: () => string | null;
@@ -14,6 +15,10 @@ export const Navbar = ({ getTheme, changeTheme }: Pops) => {
     const moon_icon: any = useRef();
     const none = "none";
     const mylogo: any = useRef();
+
+    chageLanguage(1);
+
+    const [home, setHome] = useState();
 
     const toggleTheme = () =>
         changeTheme(getTheme() === "light" ? "dark" : "light");
@@ -83,16 +88,16 @@ export const Navbar = ({ getTheme, changeTheme }: Pops) => {
 
             {/* items in bar */}
             <div className="item">
-                <a href="#home">home</a>
+                <a href="#home">{language.home.page}</a>
             </div>
             <div className="item">
-                <a href="#about">about</a>
+                <a href="#about">{language.about.page}</a>
             </div>
             <div className="item">
-                <a href="#projects">projects</a>
+                <a href="#projects">{language.projects.page}</a>
             </div>
             <div className="item">
-                <a href="#contact">contact</a>
+                <a href="#contact">{language.contact.page}</a>
             </div>
 
             {/* button change theme */}
