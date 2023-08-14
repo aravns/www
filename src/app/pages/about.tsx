@@ -19,18 +19,44 @@ export const About = ({ id }: Pops) => {
         "on the TV while writing this, and the text you are reading",
         "is something I had no idea about putting on the TV. Since",
         "you are reading my words, I must have finished the site and",
-        "put something on the TV. I hope it is good and that you like",
-        "it. Enjoy!",
+        "put something on the TV. I hope it is good and that you like it.",
+        "Enjoy!",
     ];
 
     const screen = useRef<HTMLDivElement>(null);
     const canvas = useRef<HTMLCanvasElement>(null);
+    const video = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
-        var c = canvas.current!;
-        var s = screen.current!;
+        const c = canvas.current!;
+        const s = screen.current!;
+        const ctx = c.getContext("2d")!;
+
+        var v = video.current!;
         var w = s.clientWidth;
         var h = s.clientHeight;
+
+        const setCanvasSize = () => {
+            w = s.clientWidth;
+            h = s.clientHeight;
+
+            c.width = w;
+            c.height = h;
+        };
+
+        window.addEventListener("resize", (e) => setCanvasSize());
+        setCanvasSize();
+        v.onclick = () => {
+            v.requestFullscreen();
+        };
+
+        const draw = () => {
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, w, h);
+            v.play();
+            requestAnimationFrame(draw);
+        };
+        draw();
     });
 
     return (
@@ -41,9 +67,8 @@ export const About = ({ id }: Pops) => {
                     <TypeIt
                         options={{
                             strings: about_text,
-                            speed: 10,
-                            // speed: 70,
-                            loop: true,
+                            speed: 70,
+                            // loop: true,
                             loopDelay: 1000,
                             waitUntilVisible: true,
                         }}
@@ -52,7 +77,14 @@ export const About = ({ id }: Pops) => {
                 <div className="two-div img">
                     <div className="lala">
                         <div ref={screen} className="screen">
-                            <canvas ref={canvas}></canvas>
+                            <div>
+                                <video
+                                    ref={video}
+                                    src="/videos/Animation_vs_Math.mp4"
+                                    loop
+                                ></video>
+                                <canvas ref={canvas}></canvas>
+                            </div>
                         </div>
                         <Image src="/TV.svg" alt="" width={500} height={500} />
                     </div>

@@ -87,7 +87,7 @@ html {
   display: none !important;
 }
 .header .top-bar .theme .theme-btn {
-  @apply flex justify-center items-center  border-none outline-none;
+  @apply flex justify-center items-center border-none outline-none;
 }
 .header .top-bar .burger-container {
   position: relative;
@@ -253,7 +253,7 @@ html {
 
 .home {
   @apply w-full h-full;
-  @apply w-full flex flex-col-reverse lg:flex-row justify-center items-center gap-11 p-10;
+  @apply w-full flex flex-col-reverse lg:flex-row justify-center items-center gap-11  px-0 py-10 sm:p-10;
   height: calc(100% - 6rem);
 }
 .home .two-div {
@@ -265,8 +265,13 @@ html {
 .home .content .l {
   @apply w-2 h-full;
 }
+@media (width > 1345px) {
+  .home .content .l {
+    @apply zbg-theme;
+  }
+}
 .home .content p {
-  @apply text-[1.5rem];
+  @apply w-full text-[1.5rem];
 }
 .home .img {
   @apply w-[40%] h-[100%];
@@ -340,10 +345,10 @@ html {
 }
 
 .about {
-  @apply w-full h-full flex flex-col-reverse lg:flex-row-reverse justify-center items-center gap-11 p-10;
+  @apply w-full h-full flex flex-col-reverse lg:flex-row-reverse justify-center items-center gap-11  px-0 py-10 sm:p-10;
 }
 .about .two-div {
-  @apply w-full h-full flex justify-center items-center;
+  @apply w-full h-full flex justify-center items-start sm:items-center;
 }
 .about .content {
   @apply flex flex-row justify-start items-center gap-5 w-[90%] h-[9rem];
@@ -358,7 +363,13 @@ html {
   @apply text-dark-green flex justify-center items-center relative;
 }
 .about .img .lala .screen {
-  @apply top-[11%] w-[75%] h-[60%] absolute text-[1rem];
+  @apply top-[9.7%] w-[80%] h-[62%] absolute text-[1rem] rounded-[10%] overflow-hidden;
+}
+.about .img .lala .screen div {
+  @apply w-full h-full relative;
+}
+.about .img .lala .screen div video {
+  @apply absolute bottom-0 left-1/2 -translate-x-1/2  outline-none;
 }
 
 .projects {

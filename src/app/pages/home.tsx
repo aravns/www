@@ -33,7 +33,7 @@ export const Home = ({ id, ThemeSettings }: Pops) => {
             <div className="home">
                 <div className="two-div content">
                     <span className="l"></span>
-                    <p>
+                    <p className="hidden sm:block">
                         <span className="text-light-red dark:text-dark-red">
                             Welcome
                         </span>{" "}
@@ -41,12 +41,28 @@ export const Home = ({ id, ThemeSettings }: Pops) => {
                         <span className="text-light-blue dark:text-dark-blue">
                             Fullstack
                         </span>{" "}
-                        developer. i am 18 years old. <br /> and i have{" "}
+                        developer. i am {new Date().getFullYear() - 2005} years
+                        old. <br /> and i have more then{" "}
                         <span className="text-light-green dark:text-dark-green">
-                            4+
+                            {new Date().getFullYear() - 2019}
                         </span>{" "}
                         years in programming <br /> and i use archlinux for
                         programming
+                    </p>
+                    <p className="sm:hidden block">
+                        <span className="text-light-red dark:text-dark-red">
+                            Welcome
+                        </span>{" "}
+                        to my website. hi i am aravan. i am{" "}
+                        <span className="text-light-blue dark:text-dark-blue">
+                            Fullstack
+                        </span>{" "}
+                        developer. i am {new Date().getFullYear() - 2005} years
+                        old. and i have more then{" "}
+                        <span className="text-light-green dark:text-dark-green">
+                            {new Date().getFullYear() - 2019}
+                        </span>{" "}
+                        years in programming and i use archlinux for programming
                     </p>
                 </div>
                 <div className="two-div img">

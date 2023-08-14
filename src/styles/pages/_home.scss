@@ -1,6 +1,6 @@
 %home {
     @apply w-full h-full;
-    @apply w-full flex flex-col-reverse lg:flex-row justify-center items-center gap-11 p-10;
+    @apply w-full flex flex-col-reverse lg:flex-row justify-center items-center gap-11  px-0 py-10 sm:p-10;
     height: calc(100% - 6rem);
 
     .two-div {
@@ -11,9 +11,13 @@
         @apply flex flex-row justify-start items-center gap-5 w-[90%] h-[9rem];
         .l {
             @apply w-2 h-full;
+
+            @media (width > 1345px) {
+                @apply zbg-theme;
+            }
         }
         p {
-            @apply text-[1.5rem];
+            @apply w-full text-[1.5rem];
         }
     }
 

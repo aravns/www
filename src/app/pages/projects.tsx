@@ -76,11 +76,11 @@ export const Projects = ({ id }: Pops) => {
     const [card_n, card_n_update] = useState(3);
 
     useEffect(() => {
-        window.onresize = (e) => {
+        window.addEventListener("resize", (e) => {
             if (window.innerWidth <= 1000) cards_num = 1;
             else cards_num = 3;
             card_n_update(cards_num);
-        };
+        });
 
         if (window.innerWidth <= 1000) cards_num = 1;
         else cards_num = 3;
