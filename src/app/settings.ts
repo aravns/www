@@ -101,8 +101,8 @@ const languages: Pages[] = [
  *  2: arabic
  */
 
-var j: 0 | 1 = 0;
+let j: 0 | 1 = 0;
 export const chageLanguage = (n: 0 | 1): void => {
     j = n;
 };
-export var language = languages[j];
+export const language = languages[j];

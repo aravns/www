@@ -13,7 +13,7 @@
     }
 
     .img {
-        @apply w-[63%] h-[50%] sm:h-[100%] object-cover;
+        @apply w-[63%] h-[45%] sm:h-[50%] sm:h-[100%] object-cover;
 
         .lala {
             @apply text-dark-green flex justify-center items-center relative;
@@ -22,7 +22,9 @@
                 @apply top-[9.7%] w-[80%] h-[62%] absolute text-[1rem] rounded-[10%] overflow-hidden;
 
                 div {
-                    @apply w-full h-full relative;
+                    @apply w-full h-full relative  flex justify-center items-center p-10 text-[2rem];
+                    font-family: 'Roboto', sans-serif;
+
 
                     video {
                         @apply absolute bottom-0 left-1/2 -translate-x-1/2  outline-none;

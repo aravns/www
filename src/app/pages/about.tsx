@@ -24,39 +24,40 @@ export const About = ({ id }: Pops) => {
     ];
 
     const screen = useRef<HTMLDivElement>(null);
-    const canvas = useRef<HTMLCanvasElement>(null);
-    const video = useRef<HTMLVideoElement>(null);
+    // const canvas = useRef<HTMLCanvasElement>(null);
+    // const video = useRef<HTMLVideoElement>(null);
+
 
     useEffect(() => {
-        const c = canvas.current!;
-        const s = screen.current!;
-        const ctx = c.getContext("2d")!;
+        // const c = canvas.current!;
+        // const s = screen.current!;
+        // const ctx = c.getContext("2d")!;
+        //
+        // const v = video.current!;
+        // let w = s.clientWidth;
+        // let h = s.clientHeight;
 
-        var v = video.current!;
-        var w = s.clientWidth;
-        var h = s.clientHeight;
+        // const setCanvasSize = () => {
+        //     w = s.clientWidth;
+        //     h = s.clientHeight;
+        //
+        //     c.width = w;
+        //     c.height = h;
+        // };
 
-        const setCanvasSize = () => {
-            w = s.clientWidth;
-            h = s.clientHeight;
-
-            c.width = w;
-            c.height = h;
-        };
-
-        window.addEventListener("resize", (e) => setCanvasSize());
-        setCanvasSize();
-        v.onclick = () => {
-            v.requestFullscreen();
-        };
-
-        const draw = () => {
-            ctx.fillStyle = "black";
-            ctx.fillRect(0, 0, w, h);
-            v.play();
-            requestAnimationFrame(draw);
-        };
-        draw();
+        // window.addEventListener("resize", (e) => setCanvasSize());
+        // setCanvasSize();
+        // v.onclick = () => {
+        //     v.requestFullscreen();
+        // };
+        //
+        // const draw = () => {
+        //     ctx.fillStyle = "black";
+        //     ctx.fillRect(0, 0, w, h);
+        //     v.play();
+        //     requestAnimationFrame(draw);
+        // };
+        // draw();
     });
 
     return (
@@ -78,12 +79,13 @@ export const About = ({ id }: Pops) => {
                     <div className="lala">
                         <div ref={screen} className="screen">
                             <div>
-                                <video
-                                    ref={video}
-                                    src="/videos/Animation_vs_Math.mp4"
-                                    loop
-                                ></video>
-                                <canvas ref={canvas}></canvas>
+                                Coming soon...
+                                {/* <video */}
+                                {/*     ref={video} */}
+                                {/*     src="/videos/Animation_vs_Math.mp4" */}
+                                {/*     loop */}
+                                {/* ></video> */}
+                                {/* <canvas ref={canvas} /> */}
                             </div>
                         </div>
                         <Image src="/TV.svg" alt="" width={500} height={500} />

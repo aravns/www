@@ -97,9 +97,7 @@ html {
   cursor: pointer;
   transform: rotate(0deg);
   transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   z-index: 20;
   -webkit-tap-highlight-color: transparent;
 }
@@ -357,7 +355,7 @@ html {
   @apply text-[1rem] sm:text-[1.5rem];
 }
 .about .img {
-  @apply w-[63%] h-[50%] sm:h-[100%] object-cover;
+  @apply w-[63%] h-[45%] sm:h-[50%] sm:h-[100%] object-cover;
 }
 .about .img .lala {
   @apply text-dark-green flex justify-center items-center relative;
@@ -366,7 +364,8 @@ html {
   @apply top-[9.7%] w-[80%] h-[62%] absolute text-[1rem] rounded-[10%] overflow-hidden;
 }
 .about .img .lala .screen div {
-  @apply w-full h-full relative;
+  @apply w-full h-full relative  flex justify-center items-center p-10 text-[2rem];
+  font-family: "Roboto", sans-serif;
 }
 .about .img .lala .screen div video {
   @apply absolute bottom-0 left-1/2 -translate-x-1/2  outline-none;
@@ -465,4 +464,6 @@ html {
 }
 .contact .form .send button img {
   @apply h-full;
-}/*# sourceMappingURL=globals.css.map */
+}
+
+/*# sourceMappingURL=globals.css.map */
