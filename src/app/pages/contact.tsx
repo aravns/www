@@ -87,10 +87,10 @@ export const Contact = ({ id, ThemeSettings }: Pops) => {
                             placeholder="Message"
                             cols={30}
                             rows={10}
-                        ></textarea>
+                        />
                     </div>
                     <div className="send">
-                        <button onClick={submit}>
+                        <button type="button" onClick={submit}>
                             <Image
                                 src="/send_emoji.svg"
                                 alt=""

@@ -32,7 +32,7 @@ export const Home = ({ id, ThemeSettings }: Pops) => {
             />
             <div className="home">
                 <div className="two-div content">
-                    <span className="l"></span>
+                    <span className="l" />
                     <p className="hidden sm:block">
                         <span className="text-light-red dark:text-dark-red">
                             Welcome
@@ -76,7 +76,7 @@ export const Home = ({ id, ThemeSettings }: Pops) => {
                                 "https://brandeps.com/icon-download/P/Python-icon-vector-04.svg",
                                 "https://brandeps.com/icon-download/R/React-icon-vector-05.svg",
                                 "https://brandeps.com/logo-download/F/Figma-logo-vector-01.svg",
-                                "https://brandeps.com/icon-download/M/Math-format-linear-icon-vector-01.svg",
+                                "https://img.freepik.com/free-icon/math_318-575896.jpg",
                             ].map((lala_src: string) => (
                                 <li>
                                     <div>

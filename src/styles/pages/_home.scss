@@ -27,7 +27,7 @@
             @apply flex justify-center items-center relative;
             ul {
                 --t: 15s;
-                @apply w-[15rem] h-[15rem] sm:w-[40rem] sm:h-[40rem] absolute;
+                @apply w-[15rem] h-[15rem] sm:w-[32rem] sm:h-[32rem] lg:w-[26rem] lg:h-[26rem] xl:w-[33rem] xl:h-[33rem] 2xl:w-[35rem] 2xl:h-[35rem] absolute;
                 animation: lala infinite var(--t) linear;
                 // animation-play-state: paused;
 
@@ -50,7 +50,7 @@
                 }
 
                 li {
-                    @apply w-10 h-10 sm:w-[5rem] sm:h-[5rem] absolute flex justify-center items-center;
+                    @apply w-10 h-10 sm:w-[5rem] sm:h-[5rem] md:w-[4rem] md:h-[4rem] xl:w-[5rem] xl:h-[5rem] absolute flex justify-center items-center;
 
                     div {
                         transition: all 0.5s;

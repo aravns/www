@@ -11,10 +11,10 @@ interface Pops {
 
 export const Navbar = ({ getTheme, changeTheme }: Pops) => {
     // icons
-    const sun_icon: any = useRef();
-    const moon_icon: any = useRef();
+    const sun_icon = useRef<HTMLImageElement>();
+    const moon_icon = useRef<HTMLImageElement>();
     const none = "none";
-    const mylogo: any = useRef();
+    const mylogo = useRef<HTMLImageElement>();
 
     chageLanguage(1);
 
@@ -32,8 +32,8 @@ export const Navbar = ({ getTheme, changeTheme }: Pops) => {
 
         // icons toggling
         const icons_toggle = () => {
-            sun_icon.current.classList.toggle(none);
-            moon_icon.current.classList.toggle(none);
+            sun_icon.current!.classList.toggle(none);
+            moon_icon.current!.classList.toggle(none);
         };
 
         // theme check
@@ -41,9 +41,9 @@ export const Navbar = ({ getTheme, changeTheme }: Pops) => {
             // On page load or when changing themes, best to add inline in `head` to avoid FOUC
             if (user_theme === "dark" || (!user_theme && system_theme)) {
                 document.documentElement.classList.add("dark");
-                moon_icon.current.classList.add(none);
+                moon_icon.current!.classList.add(none);
             } else {
-                sun_icon.current.classList.add(none);
+                sun_icon.current!.classList.add(none);
             }
         };
 
@@ -62,10 +62,10 @@ export const Navbar = ({ getTheme, changeTheme }: Pops) => {
         };
 
         // call theme switch on clicking buttons
-        sun_icon.current.onclick = () => {
+        sun_icon.current!.onclick = () => {
             theme_switch();
         };
-        moon_icon.current.onclick = () => {
+        moon_icon.current!.onclick = () => {
             theme_switch();
         };
 
@@ -87,16 +87,16 @@ export const Navbar = ({ getTheme, changeTheme }: Pops) => {
             </div>
 
             {/* items in bar */}
-            <div className="item">
+            <div className="item underline">
                 <a href="#home">{language.home.page}</a>
             </div>
-            <div className="item">
+            <div className="item underline">
                 <a href="#about">{language.about.page}</a>
             </div>
-            <div className="item">
+            <div className="item underline">
                 <a href="#projects">{language.projects.page}</a>
             </div>
-            <div className="item">
+            <div className="item underline">
                 <a href="#contact">{language.contact.page}</a>
             </div>
 
