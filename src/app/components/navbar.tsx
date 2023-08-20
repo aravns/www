@@ -11,10 +11,10 @@ interface Pops {
 
 export const Navbar = ({ getTheme, changeTheme }: Pops) => {
     // icons
-    const sun_icon = useRef<HTMLImageElement>();
-    const moon_icon = useRef<HTMLImageElement>();
+    const sun_icon: any = useRef<HTMLImageElement>();
+    const moon_icon: any = useRef<HTMLImageElement>();
     const none = "none";
-    const mylogo = useRef<HTMLImageElement>();
+    const mylogo: any = useRef<HTMLImageElement>();
 
     chageLanguage(1);
 
@@ -62,12 +62,9 @@ export const Navbar = ({ getTheme, changeTheme }: Pops) => {
         };
 
         // call theme switch on clicking buttons
-        sun_icon.current!.onclick = () => {
-            theme_switch();
-        };
-        moon_icon.current!.onclick = () => {
-            theme_switch();
-        };
+        sun_icon.current!.onclick = () => theme_switch();
+
+        moon_icon.current!.onclick = () => theme_switch();
 
         theme_check();
     });
@@ -76,7 +73,7 @@ export const Navbar = ({ getTheme, changeTheme }: Pops) => {
         <nav className="navbar">
             {/* logo */}
             <div className="h-full w-[12rem] flex justify-center items-center">
-                <a href="">
+                <a href="#home">
                     <img
                         ref={mylogo}
                         className=" w-full h-[80px] rounded-lg transition-all duration-500 object-cover"
