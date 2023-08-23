@@ -8,6 +8,17 @@
     }
 
     .content {
+        animation: home-content 1s linear;
+
+        @keyframes home-content {
+            0% {
+                opacity: 0;
+                transform: translateX(-30rem);
+            } 100% {
+                opacity: 1;
+                transform: translateX(0rem);
+            }
+        }
         @apply flex flex-row justify-start items-center gap-5 w-[90%] h-[9rem];
         .l {
             @apply w-2 h-full;
@@ -22,6 +33,18 @@
     }
 
     .img {
+        
+        animation: home-img 1s linear;
+
+        @keyframes home-img {
+            0% {
+                opacity: 0;
+                transform: translateX(30rem);
+            } 100% {
+                transform: translateX(0rem);
+                opacity: 1;
+            }
+        }
         @apply w-[40%] h-[100%];
         .myimg {
             @apply flex justify-center items-center relative;

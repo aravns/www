@@ -31,20 +31,36 @@
         }
     }
     .form {
-        @apply w-[90%] sm:w-[24rem] gap-5 flex flex-col justify-start items-start;
+        @apply w-[90%] sm:w-[24rem] gap-10 flex flex-col justify-start items-start relative;
+         font-family: 'Roboto Condensed', sans-serif;
 
+        span {
+            @apply pr-2;
+        }
+        label {
+            @apply absolute left-9;
+            transition: all 0.4s;
+        }
+
+        input,
+        textarea {
+            &:focus ~ label, &:valid ~ label {
+                    transition: all 0.2s;
+                    @apply -translate-y-7;
+            }
+        }
         .name {
             @apply w-full h-[2.4rem] border-b-2 border-solid flex flex-row justify-center items-center;
 
             input {
-                @apply w-full h-full bg-[#00000000] outline-none pl-2;
+                @apply w-full h-full bg-[#00000000] outline-none pl-2 z-10;
             }
         }
         .message {
             @apply w-full h-[50%] border-b-2 border-solid flex flex-row justify-center items-start;
 
             textarea {
-                @apply w-full h-full resize-none bg-[#00000000] outline-none pl-2;
+                @apply w-full h-full resize-none bg-[#00000000] outline-none pl-2 z-10;
             }
         }
         .send {

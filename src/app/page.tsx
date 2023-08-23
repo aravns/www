@@ -15,9 +15,19 @@ export default function Page() {
         Get: () => theme,
     };
 
-    useEffect(() =>
+    useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('show'); }
+                else { entry.target.classList.remove('show'); }
+            })
+        })
+
+        const unshows = document.querySelectorAll(".unshow");
+        unshows.forEach(el => { observer.observe(el) });
+
         setTheme(localStorage.theme == null ? "light" : localStorage.theme)
-    );
+    });
 
     return (
         <body>

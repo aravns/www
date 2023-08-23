@@ -12,7 +12,7 @@ interface Pops {
     };
 }
 export const Contact = ({ id, ThemeSettings }: Pops) => {
-    let name = useRef<HTMLInputElement>(null);
+    const name = useRef<HTMLInputElement>(null);
     const message = useRef<HTMLTextAreaElement>(null);
 
     const submit = () => {
@@ -35,7 +35,7 @@ export const Contact = ({ id, ThemeSettings }: Pops) => {
                     "https://rustacean.net/more-crabby-things/rustdocs.png",
             },
         };
-        var xhr = new XMLHttpRequest();
+        const xhr = new XMLHttpRequest();
         xhr.open("POST", webHookURL, true);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(
@@ -52,10 +52,15 @@ export const Contact = ({ id, ThemeSettings }: Pops) => {
         }, 500);
     };
     return (
-        <section id={id} className="pages">
+        <section id={id} className="pages unshow">
             <div className="contact">
                 <Title title="Contact" />
                 <div className="links">
+                    <Link
+                        title="github"
+                        src={`/github_${ThemeSettings.Get()}.svg`}
+                        link="https://github.com/aravns"
+                    />
                     <Link
                         title="discord"
                         src="/discord.svg"
@@ -69,34 +74,32 @@ export const Contact = ({ id, ThemeSettings }: Pops) => {
                         hex_color="FF0000"
                     />
                     <Link
-                        title="github"
-                        src={`/github_${ThemeSettings.Get()}.svg`}
-                        link="https://github.com/aravns"
-                        hex_color=""
+                        title="facebook"
+                        src="/facebook.svg"
+                        link="https://www.facebook.com/profile.php?id=100057051782272"
+                        hex_color="4267B2"
+                    />
+                    <Link
+                        title="instagram"
+                        src="/instagram.svg"
+                        link="https://www.instagram.com/aravns_"
+                        hex_color="833AB4"
                     />
                 </div>
                 <div className="form">
                     <div className="name">
                         <span>{"👉"}</span>
-                        <input ref={name} placeholder="Name" type="text" />
+                        <input ref={name} required type="text" />
+                        <label>Name</label>
                     </div>
                     <div className="message">
                         <span>{"👉"}</span>
-                        <textarea
-                            ref={message}
-                            placeholder="Message"
-                            cols={30}
-                            rows={10}
-                        />
+                        <textarea required ref={message} cols={30} rows={10} />
+                        <label>Message</label>
                     </div>
                     <div className="send">
                         <button type="button" onClick={submit}>
-                            <Image
-                                src="/send_emoji.svg"
-                                alt=""
-                                width={10}
-                                height={10}
-                            />
+                            <Image src="/send_emoji.svg" alt="" width={10} height={10} />
                             Send message
                         </button>
                     </div>
@@ -110,14 +113,15 @@ interface Link {
     title: string;
     src: string;
     link: string;
-    hex_color: string;
+    hex_color?: string;
 }
 
 const Link = ({ title, src, link, hex_color }: Link) => {
     return (
-        <a target="_blank" href={link}>
+        <a target="_blank" rel="noreferrer" href={link}>
             <Image src={src} alt="" width={10} height={10} />
-            <span style={{ color: `#${hex_color}` }}>{title}</span>
+            {hex_color && <span style={{ color: `#${hex_color}` }}>{title}</span>}
+            {!hex_color && <span>{title}</span>}
         </a>
     );
 };

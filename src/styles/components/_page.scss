@@ -1,11 +1,10 @@
 %pages {
-    @apply h-[59rem]
+    @apply md:h-[60rem] h-screen
             md:w-full
             lg:w-[60rem]
             xl:w-[80rem]
             2xl:w-[90rem]
             m-auto
-            bg-theme
             fg-theme
             relative;
     font-family: "Fira Code", monospace;
