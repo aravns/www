@@ -19,14 +19,25 @@
     @apply text-light-bg dark:text-dark-bg;
 }
 
+.lanim {
+    --t: 2s;
+    -webkit-transition: var(--t);
+    -moz-transition: var(--t);
+    -ms-transition: var(--t);
+    -o-transition: var(--t);
+    transition: var(--t);
+}
+
 .unshow {
-    opacity: 0;
-    transition: all 4s;
+    @apply opacity-0 lanim;
+    animation-play-state: paused;
 }
 .show {
-    opacity: 1;
-    transition: all 2s;
+    @apply opacity-100 lanim;
+    animation-play-state: running; 
 }
+
+
 
 @tailwind base;
 @tailwind components;
@@ -37,6 +48,7 @@
 @import "./components/navbar";
 @import "./components/mobile_nav";
 @import "./components/page";
+@import "./components/load";
 // pages
 @import "./pages/home";
 @import "./pages/about";
@@ -47,6 +59,9 @@ body {
     @extend %body;
 }
 
+.load {
+    @extend %load;
+}
 .pages {
     @extend %pages;
 }
@@ -65,4 +80,8 @@ body {
 }
 .contact {
     @extend %contact;
+}
+
+main {
+    display: none;
 }

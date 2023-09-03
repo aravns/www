@@ -17,14 +17,23 @@
   @apply text-light-bg dark:text-dark-bg;
 }
 
+.lanim {
+  --t: 2s;
+  -webkit-transition: var(--t);
+  -moz-transition: var(--t);
+  -ms-transition: var(--t);
+  -o-transition: var(--t);
+  transition: var(--t);
+}
+
 .unshow {
-  opacity: 0;
-  transition: all 4s;
+  @apply opacity-0 lanim;
+  animation-play-state: paused;
 }
 
 .show {
-  opacity: 1;
-  transition: all 2s;
+  @apply opacity-100 lanim;
+  animation-play-state: running;
 }
 
 @tailwind base;
@@ -273,6 +282,20 @@ html {
   font-size: 1.7rem;
 }
 
+.load {
+  @apply w-full h-screen fixed top-0 z-30 bg-[#000] flex flex-col gap-10 justify-center items-center;
+}
+.load div {
+  @apply absolute bottom-[30%] flex justify-center w-full;
+}
+.load div span {
+  font-size: 1.5rem;
+  color: gray;
+}
+.load span {
+  @apply text-[1.5rem] sm:text-[3rem] text-[#00ff00] font-mono;
+}
+
 .home {
   @apply w-full h-full;
   @apply w-full flex flex-col-reverse lg:flex-row justify-center items-center gap-11  px-0 py-10 sm:p-10;
@@ -282,13 +305,13 @@ html {
   @apply w-full h-full flex justify-center items-center;
 }
 .home .content {
-  animation: home-content 1s linear;
+  animation: home-content 2.5s linear;
   @apply flex flex-row justify-start items-center gap-5 w-[90%] h-[9rem];
 }
 @keyframes home-content {
   0% {
     opacity: 0;
-    transform: translateX(-30rem);
+    transform: translateX(-120rem);
   }
   100% {
     opacity: 1;
@@ -307,13 +330,13 @@ html {
   @apply w-full text-[1.5rem];
 }
 .home .img {
-  animation: home-img 1s linear;
+  animation: home-img 2.5s linear;
   @apply w-[40%] h-[100%];
 }
 @keyframes home-img {
   0% {
     opacity: 0;
-    transform: translateX(30rem);
+    transform: translateX(120rem);
   }
   100% {
     transform: translateX(0rem);
@@ -400,7 +423,7 @@ html {
 }
 .about .img {
   animation: about-img 1s linear;
-  @apply w-[63%] h-[45%] sm:h-[50%] sm:h-[100%] object-cover;
+  @apply w-[60%] h-[45%] sm:h-[50%] sm:h-[100%] object-cover;
 }
 @keyframes about-img {
   0% {
@@ -578,6 +601,10 @@ html {
 }
 .contact .form .send button img {
   @apply h-full;
+}
+
+main {
+  display: none;
 }
 
 /*# sourceMappingURL=globals.css.map */

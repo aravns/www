@@ -10,9 +10,19 @@ interface Pops {
 }
 
 export const About = ({ id }: Pops) => {
-    const about_text = [
-        "Before I begin, I must confess that I have no idea what I will write to express myself.However, I am a person who loves programming because it allows for creativity and the expression of ideas. On this old TV, I will display a simple thing from my experience. I was confused about what to put on the TV while writing this, and the text you are reading is something I had no idea about putting on the TV. Since you are reading my words, I must have finished the site and put something on the TV. I hope it is good and that you like it. Enjoy!"
-    ];
+    const about_text = `
+Hello
+I am Abdul Rahman from the Kingdom of Saudi Arabia
+
+I started learning programming when I was fifteen years old
+
+At that time, I did not have a computer, so I started using my father's phone
+
+Which was iPhone 6 the reason I got into programming at that time
+
+And I continue until now is that the computer teacher said that the programmer’s profession is the future and it is fun and brings high income 🙂 I thought that I would become rich if I learned it, so I started in 04/07/2019 following explanations of the Python language most of the day and continued and even learned until I reached the stage I am in now
+    `
+
 
     const screen = useRef<HTMLDivElement>(null);
 

@@ -77,7 +77,7 @@ export const Navbar = ({ getTheme, changeTheme }: Pops) => {
                     <img
                         ref={mylogo}
                         className=" w-full h-[80px] rounded-lg transition-all duration-500 object-cover"
-                        src="https://i.gifer.com/CPLA.gif"
+                        src="https://i.pinimg.com/originals/5e/5f/cd/5e5fcd2efe9b4eb3bbaace2a02b29185.gif"
                         alt=""
                     />
                 </a>
